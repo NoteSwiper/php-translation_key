@@ -1,4 +1,10 @@
 {
-  "foo.bar.foobar": "baz",
-  "foobar.barfoo": "foobaz"
+  "foo.bar.foobar": {
+    "en": "baz",
+    "ja": "foobaz"
+  },
+  "foobar.barfoo": {
+    "en": "foobarbaz",
+    "ja": "foobarqux"
+  }
 }
