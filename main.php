@@ -1,4 +1,5 @@
 <?php
+include_once "./config.php";
 function GetTranslated(string $key, string|null $languageCode = null, bool|null $showoriginonerror = false): string|null|array {
 	$langCode = $languageCode;
 	$showorigin = $showoriginonerror;
@@ -8,7 +9,7 @@ function GetTranslated(string $key, string|null $languageCode = null, bool|null 
 	if (!isset($showoriginonerror)) {
 		$showorigin = $_GET['key_err'] ?? false;
 	}
-	$translations = json_decode(file_get_contents("C:/xampp/www/files/translations.json"),true);
+	$translations = json_decode(file_get_contents($translation_key['json_file']),true);
 	$is_key_set = isset($translations[$key]);
 	$is_lang_set = isset($translations[$key][$langCode]);
 	if ($is_key_set == true && $is_lang_set == true) {
